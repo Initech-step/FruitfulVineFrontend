@@ -1,40 +1,13 @@
 "use client";
 import { useState } from 'react';
-
-// Types based on your Pydantic models
-interface Category {
-  _id: string;
-  name: string;
-  type: 'product' | 'blog';
-  description: string;
-}
-
-interface BlogPost {
-  _id: string;
-  image_url: string;
-  category_id: string;
-  category_name: string;
-  post_title: string;
-  short_title: string;
-  body: string;
-  date: string;
-  iframe: string;
-}
-
-interface Product {
-  _id: string;
-  image_url: string;
-  category_id: string;
-  category_name: string;
-  product_name: string;
-  short_description: string;
-  body: string;
-  date: string;
-  iframe: string;
-}
-
-// API Base URL
-const API_BASE = 'http://127.0.0.1:8000/api';
+import { API_BASE, API_ENDPOINTS, MESSAGES } from '@/lib/constants';
+import { Category, Product, BlogPost } from '@/lib/types';
+import { CategoryForm } from '@/components/admin';
+import { CategoryList } from '@/components/admin';
+import { ProductForm } from '@/components/admin';
+import { ProductList } from '@/components/admin';
+import { BlogForm } from '@/components/admin';
+import { BlogList } from '@/components/admin';
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<'categories' | 'products' | 'blogs'>('categories');

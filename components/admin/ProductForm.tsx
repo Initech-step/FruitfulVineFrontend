@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
+import { API_BASE } from "@/lib/constants";
+import { Category } from "@/lib/types";
 
 // Product Form Component
-function ProductForm({ editingItem, categories, onSuccess, onCancel }: any) {
+export default function ProductForm({ editingItem, categories, onSuccess, onCancel }: any) {
   const [formData, setFormData] = useState({
     image_url: editingItem?.image_url || '',
     category_id: editingItem?.category_id || '',

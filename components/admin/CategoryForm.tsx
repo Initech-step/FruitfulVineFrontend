@@ -1,9 +1,10 @@
-// Category Form Component
+
 "use client";
-
 import { useState } from "react";
+import { API_BASE } from "@/lib/constants";
 
-function CategoryForm({ editingItem, onSuccess, onCancel }: any) {
+
+export default function CategoryForm({ editingItem, onSuccess, onCancel }: any) {
   const [formData, setFormData] = useState({
     name: editingItem?.name || '',
     type: editingItem?.type || 'product',

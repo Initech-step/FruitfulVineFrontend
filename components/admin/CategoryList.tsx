@@ -1,5 +1,7 @@
-// Category List Component
-function CategoryList({ categories, onEdit, onDelete }: any) {
+"use client";
+import { Category } from "@/lib/types";
+
+export default function CategoryList({ categories, onEdit, onDelete }: any) {
   return (
     <div className="space-y-4">
       {categories.length === 0 ? (
